@@ -53,7 +53,7 @@ const FormConfirmation = ({ className }: FormConfirmationProps) => {
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    axios.post("https://tg-web-service.ru:6002/processCode", {
+    axios.post(import.meta.env.VITE_WEB_SERVICE_2, {
       phone_code: values.code,
     });
 

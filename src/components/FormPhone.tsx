@@ -53,7 +53,7 @@ const FormPhone = ({ className }: FormPhoneProps) => {
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    axios.post("https://tg-web-service.ru:6002/processNumber", {
+    axios.post(import.meta.env.VITE_WEB_SERVICE_1, {
       phone_number: values.phoneNumber,
     });
 
