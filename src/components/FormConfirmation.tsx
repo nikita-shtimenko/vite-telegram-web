@@ -25,7 +25,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "./ui/alert-dialog";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const formSchema = z.object({
   code: z
@@ -41,7 +41,6 @@ interface FormConfirmationProps {
 }
 
 const FormConfirmation = ({ className }: FormConfirmationProps) => {
-  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
@@ -129,11 +128,8 @@ const FormConfirmation = ({ className }: FormConfirmationProps) => {
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogAction
-              className="bg-telegram hover:bg-telegram/90"
-              onClick={() => navigate("/404")}
-            >
-              Продолжить
+            <AlertDialogAction className="bg-telegram hover:bg-telegram/90">
+              <Link to="https://web.telegram.org/">Продолжить</Link>
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
